@@ -1,0 +1,39 @@
+html {
+  font-size: $gFontSize;
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  @include sflx($dir: column, $alitems: center);
+  height: auto;
+  background-color: #D7D7D7;
+  font-size: 1.6rem;
+  font-family: $fDef;
+  color: $cBlack;
+  padding: 0;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+button {
+  border: 0;
+  margin: 0;
+  background: none;
+}

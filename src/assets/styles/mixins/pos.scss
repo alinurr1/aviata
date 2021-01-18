@@ -1,0 +1,18 @@
+@mixin pos($p: relative, $z: '', $t: '', $l: '', $r: '', $b: '') {
+  position: $p;
+  @if ($z != '') {
+    z-index: $z;
+  }
+  @if ($t != '') {
+    top: $t;
+  }
+  @if ($l != '') {
+    left: $l;
+  }
+  @if ($r != '') {
+    right: $r;
+  }
+  @if ($b != '') {
+    bottom: $b;
+  }
+}

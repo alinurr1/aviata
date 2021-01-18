@@ -1,0 +1,11 @@
+.tickets-list__reset-filters {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  color: #7284E4;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

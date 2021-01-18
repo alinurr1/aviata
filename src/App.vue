@@ -1,28 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <TicketsListPage />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import '@/assets/styles/index.scss';
+import TicketsListPage from '@/pages/TicketsListPage';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    TicketsListPage,
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans"),
+  url("./assets/fonts/open-sans.ttf") format("truetype");
 }
+
 </style>

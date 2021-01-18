@@ -1,0 +1,20 @@
+@mixin sflx(
+  $d: flex,
+  $dir: '',
+  $wrap: '',
+  $juscont: '',
+  $alitems: '') {
+  display: $d;
+  @if ($dir != '') {
+    flex-direction: $dir;
+  }
+  @if ($wrap != '') {
+    flex-wrap: $wrap;
+  }
+  @if ($juscont != '') {
+    justify-content: $juscont;
+  }
+  @if ($alitems != '') {
+    align-items: $alitems;
+  }
+}

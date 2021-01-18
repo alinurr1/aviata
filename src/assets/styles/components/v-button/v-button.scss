@@ -1,0 +1,21 @@
+.v-button {
+  padding: .6rem;
+  width: 20rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  color: $cWhite;
+}
+
+@each $name, $background in $listOfColors {
+  .v-button--thm-#{$name} {
+    background-color: $background;
+    border-color: $background;
+
+    &:hover {
+      background-color: darken($background, 10%);
+      border-color: darken($background, 10%);
+    }
+  }
+}

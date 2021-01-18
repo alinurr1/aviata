@@ -1,0 +1,18 @@
+.flight-card-actions__add-luggage {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-align: center;
+  color: #5763B3;
+  padding: .2rem .4rem;
+  border-radius: 2px;
+  background-color: #EAF0FA;
+
+  &::before {
+    content: "+ ";
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken(#EAF0FA, 5%);
+  }
+}
