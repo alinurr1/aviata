@@ -11,7 +11,11 @@
       <p class="tickets-list__reset-filters">Сбросить все фильтры</p>
     </div>
     <div class="col-9">
-      <flight-option-card/>
+      <flight-option-card
+        v-for="(flight, flightIdx) in flights"
+        :key="flightIdx"
+        :flight="flight"
+      />
     </div>
   </div>
 </template>

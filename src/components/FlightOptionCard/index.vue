@@ -1,12 +1,14 @@
 <template>
   <div>
-    <div
-      v-for="(flight, flightIdx) in flights"
-      :key="flightIdx"
-      class="flight-card d-flex"
-    >
-      <flight-option-card-details/>
-      <flight-option-card-actions :price="flight.price"/>
+    <div class="flight-card d-flex">
+      <flight-option-card-details
+        :is-refundable="flight.refundable"
+        :carrier="flight.validating_carrier"
+        :carrier-name="flight.itineraries[0][0].carrier_name"
+        :departure-date="flight.itineraries[0][0].dep_date"
+        :arrival-date="flight.itineraries[0][0].arr_date"
+      />
+      <flight-option-card-actions :price="flight.price_raw"/>
     </div>
   </div>
 </template>

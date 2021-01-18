@@ -7,14 +7,14 @@
       >
         <img
           class="flight-card-details__image mr-3"
-          src="https://aviata.kz/static/airline-logos/80x80/KC.png"
+          :src="`https://aviata.kz/static/airline-logos/80x80/${carrier}.png`"
           alt=""
         />
-        <span>Air Astana</span>
+        <span>{{ carrierName }}</span>
       </div>
       <div class="ml-2">
-        <div class="flight-card-details__date">25 ноя, вс</div>
-        <div class="flight-card-details__time">23:25</div>
+        <div class="flight-card-details__date">{{ getDepartureDate }}</div>
+        <div class="flight-card-details__time">{{ getDepartureTime }}</div>
       </div>
       <div class="mx-auto" style="width: 20rem; position: relative">
         <div class="flight-card-details__locations">
@@ -29,7 +29,8 @@
             <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41
              4.658A.25.250 0 1 8 4.466z"/>
           </svg>
-          <span class="ml-2">невозвратный</span>
+          <span v-if="isRefundable" class="ml-2">возвратный</span>
+          <span v-else class="ml-2">невозвратный</span>
         </div>
         <div class="flight-card-details__line"/>
         <div class="flight-card-details__transfer">
@@ -38,9 +39,15 @@
       </div>
       <div class="ml-2">
         <div class="flight-card-details__date">
-          26 ноя, сб <span style="color: rgba(255,55,36,0.8)">+1</span>
+          {{ getArrivalDate }}
+          <span
+            v-if="arrivalOnNextDay"
+            style="color: rgba(255,55,36,0.8)"
+          >
+             +1
+          </span>
         </div>
-        <div class="flight-card-details__time">03:45</div>
+        <div class="flight-card-details__time">{{ getArrivalTime }}</div>
       </div>
     </div>
     <div class="flight-card-details__options">
