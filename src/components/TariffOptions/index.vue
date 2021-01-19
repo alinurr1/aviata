@@ -7,8 +7,14 @@
         :key="tariffIdx"
         class="tariff-filters_option"
       >
-        <input type="checkbox" :id="tariff" :value="tariff">
-        <label>{{ tariff }}</label>
+        <input
+          type="checkbox"
+          :id="tariff.label"
+          :value="tariff.label"
+          :checked="isChecked(tariff)"
+          @click="checkOption(tariff)"
+        >
+        <label>{{ tariff.label }}</label>
       </li>
     </ul>
   </div>

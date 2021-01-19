@@ -9,6 +9,7 @@ export default {
 
   props: {
     price: Number,
+    luggage: Object,
   },
 
   computed: {

@@ -3,7 +3,7 @@ export default {
     state.airlinesOptions = newOptions;
   },
 
-  setLuggageOptions(state, newOptions) {
-    state.luggageOptions = newOptions;
+  setTariffOptions(state, newOptions) {
+    state.tariffOptions = newOptions;
   },
 };

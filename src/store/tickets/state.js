@@ -1,4 +1,4 @@
 export default {
   airlinesOptions: [],
-  luggageOptions: [],
+  tariffOptions: [],
 };

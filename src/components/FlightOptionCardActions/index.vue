@@ -14,7 +14,9 @@
       <p class="flight-card-actions__passengers">Цена за всех пассажиров</p>
     </div>
     <div class="row d-flex justify-content-around align-items-center mx-2 mb-3">
-      <span class="flight-card-actions__no-luggage">Нет багажа</span>
+      <span class="flight-card-actions__no-luggage">
+        {{ luggage['20KG'] ? '20 кг' : 'Нет багажа' }}
+      </span>
       <span class="flight-card-actions__add-luggage">Добавить багаж</span>
     </div>
   </div>

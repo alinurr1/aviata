@@ -11,7 +11,10 @@
         :segments="flight.itineraries[0][0].segments"
         :stop-duration="flight.itineraries[0][0].layovers[0]"
       />
-      <flight-option-card-actions :price="flight.price_raw"/>
+      <flight-option-card-actions
+        :price="flight.price_raw"
+        :luggage="flight.services"
+      />
     </div>
   </div>
 </template>
