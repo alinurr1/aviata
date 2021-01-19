@@ -1,4 +1,4 @@
-import { mapMutations } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'AirlineOptions',
@@ -7,10 +7,10 @@ export default {
     airlines: Object,
   },
 
-  data() {
-    return {
-      selectedAirlines: [],
-    };
+  computed: {
+    ...mapGetters([
+      'getAirlineOptions',
+    ]),
   },
 
   methods: {
@@ -19,7 +19,7 @@ export default {
     ]),
 
     isChecked(airline) {
-      return this.selectedAirlines.includes(airline);
+      return this.getAirlineOptions.includes(airline);
     },
 
     checkOption(airline) {
@@ -28,13 +28,11 @@ export default {
     },
 
     addAirline(airline) {
-      this.selectedAirlines.push(airline);
-      this.setAirlineOptions(this.selectedAirlines);
+      this.setAirlineOptions([...this.getAirlineOptions, airline]);
     },
 
     removeAirline(airline) {
-      this.selectedAirlines = this.selectedAirlines.filter((val) => val !== airline);
-      this.setAirlineOptions(this.selectedAirlines);
+      this.setAirlineOptions(this.getAirlineOptions.filter((val) => val !== airline));
     },
   },
 };

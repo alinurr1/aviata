@@ -8,7 +8,12 @@
         :airlines="airlines"
         style="margin-bottom: 1.2rem"
       />
-      <p class="tickets-list__reset-filters">Сбросить все фильтры</p>
+      <p
+        class="tickets-list__reset-filters"
+        @click="emptyFilter"
+      >
+        Сбросить все фильтры
+      </p>
     </div>
     <div class="col-9">
       <flight-option-card

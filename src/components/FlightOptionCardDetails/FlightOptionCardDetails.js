@@ -32,6 +32,9 @@ export default {
     carrierName: String,
     departureDate: String,
     arrivalDate: String,
+    travelTime: Number,
+    segments: Array,
+    stopDuration: Number,
   },
 
   computed: {
@@ -60,7 +63,34 @@ export default {
     },
 
     arrivalOnNextDay() {
-      return new Date(this.departureDate).getDate() - new Date(this.arrivalDate).getDate() > -1;
+      return new Date(this.arrivalDate).getDate() - new Date(this.departureDate).getDate() > 0;
+    },
+
+    getTravelTime() {
+      const hours = Math.floor(this.travelTime / 60 / 60);
+      const minutes = Math.floor(this.travelTime / 60) - (hours * 60);
+      if (hours >= 24) {
+        const days = Math.floor(hours / 24);
+        return `${days}д ${hours - 24 * days}ч ${minutes}м`;
+      }
+      return `${hours}ч ${minutes}м`;
+    },
+
+    getOriginCode() {
+      return this.segments[0].origin_code;
+    },
+
+    getDestinationCode() {
+      return this.segments[this.segments.length - 1].dest_code;
+    },
+
+    hasStop() {
+      if (this.segments.length > 1) {
+        const hours = Math.floor(this.stopDuration / 60 / 60);
+        const minutes = Math.floor(this.stopDuration / 60) - (hours * 60);
+        return `через ${this.segments[0].dest}, ${hours}ч ${minutes}м`;
+      }
+      return '';
     },
   },
 };

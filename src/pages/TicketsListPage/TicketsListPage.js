@@ -3,7 +3,7 @@ import TariffOptions from '@/components/TariffOptions';
 import FlightOptionCard from '@/components/FlightOptionCard';
 
 import results from '@/data/results.json';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'TicketsListPage',
@@ -36,5 +36,14 @@ export default {
   },
 
   methods: {
+    ...mapMutations([
+      'setAirlineOptions',
+      'setLuggageOptions',
+    ]),
+
+    emptyFilter() {
+      this.setAirlineOptions([]);
+      this.setLuggageOptions([]);
+    },
   },
 };
