@@ -1,3 +1,4 @@
 export default {
-  getTicketParameters: (state) => state,
+  getAirlineOptions: (state) => state.airlinesOptions,
+  getLuggageOptions: (state) => state.luggageOptions,
 };

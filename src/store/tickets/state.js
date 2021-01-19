@@ -1,5 +1,4 @@
 export default {
-  parameters: {
-
-  },
+  airlinesOptions: [],
+  luggageOptions: [],
 };

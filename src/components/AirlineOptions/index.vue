@@ -7,7 +7,13 @@
         :key="airlineIdx"
         class="airline-filters__option"
       >
-        <input type="checkbox" :id="airline" :value="airline">
+        <input
+          type="checkbox"
+          :id="airline"
+          :value="airline"
+          :checked="isChecked(airline)"
+          @click="checkOption(airline)"
+        >
         <label>{{ airline }}</label>
       </li>
     </ul>

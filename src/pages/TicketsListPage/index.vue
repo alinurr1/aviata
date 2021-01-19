@@ -12,7 +12,7 @@
     </div>
     <div class="col-9">
       <flight-option-card
-        v-for="(flight, flightIdx) in flights"
+        v-for="(flight, flightIdx) in getFilteredTickets"
         :key="flightIdx"
         :flight="flight"
       />

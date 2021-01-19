@@ -1,5 +1,9 @@
 export default {
-  setTicketParameters(state, newParameters) {
-    state.parameters = newParameters;
+  setAirlineOptions(state, newOptions) {
+    state.airlinesOptions = newOptions;
+  },
+
+  setLuggageOptions(state, newOptions) {
+    state.luggageOptions = newOptions;
   },
 };
